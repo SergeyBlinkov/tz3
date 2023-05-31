@@ -1,0 +1,57 @@
+.BurgerButton {
+  position: fixed;
+  left: 5px;
+  top: 5px;
+  display: flex;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  //border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  //background: #fff;
+
+  .BurgerButton-wrapper {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+  }
+
+  &_f, &_s, &_t {
+    position: absolute;
+    content: "";
+    background-color: #7F7F7F;
+    display: flex;
+    border: 2px solid #7F7F7F;
+    border-radius: 2px;
+    height: 2px;
+  }
+
+  &_f {
+    transition: transform 1s ease-in-out;
+    left: 3px;
+    top: 10px;
+    width: 16px;
+    transform-origin: 31% 170%;
+  }
+
+  &_s {
+    transition: transform 1s ease-in-out;
+    top: 20px;
+    left: 3px;
+    width: 34px;
+  }
+
+  &_t {
+    transition: transform 1s ease-in-out;
+    width: 25px;
+    left: 3px;
+    top: 30px;
+    transform-origin: 98% 190%;
+  }
+
+}

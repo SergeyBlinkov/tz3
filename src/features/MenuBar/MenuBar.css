@@ -1,0 +1,13 @@
+.MenuNav {
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+  flex-direction: column;
+}
+.MenuNav a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=MenuBar.css.map */

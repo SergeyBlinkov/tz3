@@ -1,0 +1,37 @@
+.UserHomepage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.UserHomepage-block {
+  display: flex;
+  width: 400px;
+  margin-top: 25px;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 5px gray;
+}
+.UserHomepage-block_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.UserHomepage-block_info img {
+  align-self: center;
+}
+.UserHomepage .UserHomepage-posts {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.UserHomepage .UserHomepage-posts_items {
+  padding: 15px 0;
+  box-shadow: 0 0 5px gray;
+}
+
+/*# sourceMappingURL=UserHomepage.css.map */

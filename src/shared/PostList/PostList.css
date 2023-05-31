@@ -1,0 +1,10 @@
+.PostList-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+/*# sourceMappingURL=PostList.css.map */

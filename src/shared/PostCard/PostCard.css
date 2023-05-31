@@ -1,0 +1,35 @@
+.PostWrapper {
+  padding-left: 40px;
+  margin: 15px;
+}
+
+.PostCard {
+  display: grid;
+  grid-template-columns: 80px 1fr 150px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  grid-gap: 20px;
+}
+.PostCard img {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.PostCard button {
+  align-self: flex-end;
+}
+.PostCard_description {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.PostCard_description h4, .PostCard_description p {
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=PostCard.css.map */
