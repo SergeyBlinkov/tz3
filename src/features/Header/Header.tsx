@@ -8,7 +8,7 @@ type THeader = {
 
 const Header = ({ title }: THeader) => {
   return (
-    <Navbar bg="light">
+    <Navbar bg="light" className={"Header"}>
       <MenuBar />
       <Container>
         <Navbar.Brand href="/">

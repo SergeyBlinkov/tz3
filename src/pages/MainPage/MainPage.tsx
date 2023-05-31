@@ -31,9 +31,10 @@ const MainPage = () => {
     getAllPosts();
   }, [getAllPosts]);
 
-  const filteredArray = () => {
-    return posts.sortingArray.length > 0 ? posts.sortingArray : posts.posts;
-  };
+  const FilteredArray = () =>
+    useMemo(() => {
+      return posts.sortingArray.length > 0 ? posts.sortingArray : posts.posts;
+    }, [posts.sortingArray.length, posts.posts.length]);
   const useDebounce = useMemo(
     () =>
       debounce(
@@ -70,7 +71,7 @@ const MainPage = () => {
           />
         </InputGroup>
       </section>
-      <PostList posts={filteredArray()} cb={getAllPosts} />
+      <PostList posts={FilteredArray()} cb={getAllPosts} />
     </div>
   );
 };

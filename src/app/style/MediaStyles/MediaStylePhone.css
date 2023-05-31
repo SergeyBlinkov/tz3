@@ -1,0 +1,36 @@
+@media screen and (max-width: 480px) {
+  .About {
+    width: 100%;
+  }
+  .About-me {
+    flex-direction: column;
+  }
+  .About-me .TitleAndList {
+    padding-left: 0;
+  }
+  .About_MyProject {
+    padding: 20px;
+  }
+  .Header {
+    padding-left: 55px;
+  }
+  .PostWrapper {
+    padding-left: 0;
+  }
+  .PostCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, min-content);
+  }
+  .PostCard button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .PostCard_description {
+    flex-direction: column;
+    grid-column: span 2;
+    gap: 15px;
+  }
+}
+
+/*# sourceMappingURL=MediaStylePhone.css.map */
