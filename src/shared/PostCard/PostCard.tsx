@@ -40,7 +40,6 @@ const PostCard = (credentials: TPostCard) => {
     setTimeout(async () => {
       await PostRequest.getComments(credentials.id)
         .then((comments) => {
-          console.log(comments.data);
           if (comments.data.length === 0) {
             return setShowComments((prev) => ({
               ...prev,

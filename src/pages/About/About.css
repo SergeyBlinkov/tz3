@@ -1,0 +1,26 @@
+.About {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-bottom: 40px;
+}
+.About h3 {
+  text-align: center;
+  padding: 0 15px 15px 15px;
+}
+.About-me {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  gap: 25px;
+}
+.About-me img {
+  width: 250px;
+  height: 250px;
+}
+.About_Frontend, .About_Backend, .About_MyProject {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=About.css.map */

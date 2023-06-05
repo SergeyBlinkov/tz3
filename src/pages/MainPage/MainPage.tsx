@@ -26,7 +26,7 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const getAllPosts = useCallback(() => {
     dispatch({ type: RGetPostsSaga, payload: pageRef.current++ });
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     getAllPosts();
   }, [getAllPosts]);
@@ -37,7 +37,7 @@ const MainPage = () => {
         (text: string) => dispatch({ type: RReqSortingArray, payload: text }),
         400
       ),
-    []
+    [dispatch]
   );
   const cantFindPosts =
     InputRef.current &&

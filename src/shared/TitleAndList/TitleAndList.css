@@ -1,0 +1,14 @@
+.TitleAndList {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.TitleAndList_list {
+  display: flex;
+  font-size: 16px;
+  padding-left: 35px;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/*# sourceMappingURL=TitleAndList.css.map */

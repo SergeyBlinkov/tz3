@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PostRequest from "../../query/PostRequest";
 import MenuBar from "../../features/MenuBar/MenuBar";
 import { TGetUser } from "../../query/QueryTypes";
@@ -34,13 +34,12 @@ const UserHomepage = () => {
     useState<Omit<TPostListReducer, "sortingArray" | "isNoMorePosts">>(
       initialUserPosts
     );
-  const location = window.location.search;
-  const id = location.match(/\d+/);
+  const id = useRef(window.location.search.match(/\d+/));
   const handleClickPosts = async () => {
     setUsersPosts((prev) => ({ ...prev, isLoading: true }));
 
     setTimeout(async () => {
-      if (!id) {
+      if (!id.current) {
         setUsersPosts((prev) => ({
           ...prev,
           isLoading: false,
@@ -48,10 +47,12 @@ const UserHomepage = () => {
         }));
         return;
       }
-      await PostRequest.getUserPosts(+id)
+      await PostRequest.getUserPosts(+id.current)
         .then(({ data }) => {
           if (data.length === 0) {
-            throw new Error("У данного пользователя нет постов") as AxiosError;
+            throw Object.assign(new Error(), {
+              message: "У пользователя нет постов",
+            });
           } else
             setUsersPosts((prev) => ({
               ...prev,
@@ -74,7 +75,7 @@ const UserHomepage = () => {
   useEffect(() => {
     setUserData((prev) => ({ ...prev, isLoading: true }));
     setTimeout(async () => {
-      if (!id) {
+      if (!id.current) {
         setUserData((prev) => ({
           ...prev,
           isLoading: false,
@@ -82,7 +83,7 @@ const UserHomepage = () => {
         }));
         return;
       }
-      await PostRequest.getUser(+id)
+      await PostRequest.getUser(+id.current)
         .then(({ data }) =>
           setUserData((prev) => ({
             ...prev,
@@ -103,7 +104,10 @@ const UserHomepage = () => {
   }, []);
   return (
     <div className={"UserHomepage"}>
-      <Header title={"Личный кабинет "} hr={`/user-homepage${location}`} />
+      <Header
+        title={"Личный кабинет "}
+        hr={`/user-homepage${window.location}`}
+      />
       <MenuBar />
       <SpinnerLoader show={userData.isLoading} />
       {!userData.isLoading &&

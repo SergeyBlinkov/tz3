@@ -58,9 +58,9 @@ let list3 = [
   "[ styled-components ]",
 ];
 let list4 = [
-  " auth/registration (полная авторизация через db" + "[ Posgresq ])",
+  "auth/registration (полная авторизация через db [ Postgresql ])",
   "Корзина товаров, продукты, все через db",
-  "Передача в куках [JWT] tokena",
+  "Передача в куках [JWT] token",
   "Обновление accessToken через refreshToken.",
 ];
 let list5 = [

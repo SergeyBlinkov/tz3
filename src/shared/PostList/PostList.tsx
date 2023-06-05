@@ -23,7 +23,7 @@ const PostList = ({ posts, cb }: TPostList) => {
       });
       if (el) lastElement.current.observe(el);
     },
-    [isLoading]
+    [isLoading, isNoMorePosts, cb]
   );
 
   return (
