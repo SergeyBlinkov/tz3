@@ -1,8 +1,6 @@
 .About {
  display: flex;
  flex-direction: column;
- margin: 0 auto;
- width: 1280px;
  gap: 50px;
  padding-bottom: 40px;
  h3 {
@@ -19,4 +17,9 @@
    height: 250px;
   }
  }
+ &_Frontend,&_Backend ,&_MyProject{
+  width: 1280px;
+  margin: 0 auto;
+ }
+
 }

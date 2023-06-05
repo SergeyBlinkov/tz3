@@ -74,7 +74,7 @@ let list6 = [
 const About = () => {
   return (
     <div className={"About"}>
-      <Header title={"Обо мне"} />
+      <Header title={"Обо мне"} hr={"/about"} />
       <section className={"About-me"}>
         <img src={me} alt={"me"} />
         <section>
@@ -87,7 +87,7 @@ const About = () => {
           </ul>
         </section>
       </section>
-      <section>
+      <section className={"About_Frontend"}>
         <h3>Технологии которые использовал связанные с Frontend:</h3>
         <TitleAndList
           title={
@@ -100,7 +100,7 @@ const About = () => {
         <TitleAndList title={"Deploy"} list={["Vercel"]} />
         <TitleAndList title={"Архетиктура"} list={["Feature-Slice-Design"]} />
       </section>
-      <section>
+      <section className={"About_Backend"}>
         <h3>Технологии связанные с backend:</h3>
         <TitleAndList title={"NodeJs"} list={list4} />
         <TitleAndList title={"Опыт работы с [Firebase]"} list={list5} />

@@ -31,10 +31,6 @@ const MainPage = () => {
     getAllPosts();
   }, [getAllPosts]);
 
-  const FilteredArray = () =>
-    useMemo(() => {
-      return posts.sortingArray.length > 0 ? posts.sortingArray : posts.posts;
-    }, [posts.sortingArray.length, posts.posts.length]);
   const useDebounce = useMemo(
     () =>
       debounce(
@@ -43,10 +39,16 @@ const MainPage = () => {
       ),
     []
   );
-  console.log(posts);
+  const cantFindPosts =
+    InputRef.current &&
+    InputRef.current?.value.length > 0 &&
+    posts.sortingArray.length === 0;
   const HandleChange = (e: ChangeEvent<HTMLInputElement>) => {
     useDebounce(e.target.value);
   };
+  const FilteredArray = () =>
+    posts.sortingArray.length > 0 ? posts.sortingArray : posts.posts;
+
   return (
     <div className={"MainPage"}>
       <Header title={"Список постов"} />
@@ -71,7 +73,17 @@ const MainPage = () => {
           />
         </InputGroup>
       </section>
-      <PostList posts={FilteredArray()} cb={getAllPosts} />
+      {cantFindPosts ? (
+        <p
+          className={"cantFindPosts"}
+          style={{ width: "100%", justifyContent: "center", display: "flex" }}
+        >
+          Пост который вы ищете не существует
+        </p>
+      ) : (
+        <PostList posts={FilteredArray()} cb={getAllPosts} />
+      )}
+      <span style={{ paddingLeft: 25 }}>{posts.errors}</span>
     </div>
   );
 };

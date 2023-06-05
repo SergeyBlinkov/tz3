@@ -19,14 +19,16 @@ function* GetPosts(page: { type: string; payload: number }) {
   yield loader();
 
   try {
-    const posts: TGetAllPosts[] = yield PostRequest.getAllPosts(page.payload)
-      .then(({ data }) => data)
-      .catch((e) => new Error(e));
+    const posts: TGetAllPosts[] = yield PostRequest.getAllPosts(
+      page.payload
+    ).then(({ data }) => data);
+
     yield delay(1000);
     yield put({ type: RSetPosts, payload: posts });
     return;
   } catch (e) {
-    yield put({ type: RSetErrorPosts, message: e });
+    yield delay(1000);
+    yield put({ type: RSetErrorPosts, payload: e });
   }
 }
 

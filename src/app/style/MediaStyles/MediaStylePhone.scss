@@ -11,6 +11,9 @@
     &_MyProject {
       padding: 20px;
     }
+    &_MyProject , &_Frontend, &_Backend {
+      width: 100%;
+    }
   }
   //Header Features
   .Header {
@@ -33,5 +36,9 @@
       grid-column: span 2;
       gap: 15px;
     }
+  }
+  //User-Homepage
+  .UserHomepage {
+    width: 100%;
   }
 }

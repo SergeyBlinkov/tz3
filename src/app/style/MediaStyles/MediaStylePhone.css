@@ -11,6 +11,9 @@
   .About_MyProject {
     padding: 20px;
   }
+  .About_MyProject, .About_Frontend, .About_Backend {
+    width: 100%;
+  }
   .Header {
     padding-left: 55px;
   }
@@ -30,6 +33,9 @@
     flex-direction: column;
     grid-column: span 2;
     gap: 15px;
+  }
+  .UserHomepage {
+    width: 100%;
   }
 }
 

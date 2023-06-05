@@ -1,8 +1,12 @@
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1280px) {
   .About {
-  width: 100%;
+  width: 100% !important;
     &_MyProject {
       padding-left: 25px;
     }
+    &_MyProject , &_Frontend , &_Backend {
+      width: 100%;
+    }
   }
+  .Header { padding-left: 55px}
 }

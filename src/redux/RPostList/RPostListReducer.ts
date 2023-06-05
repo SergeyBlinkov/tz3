@@ -8,6 +8,7 @@ import {
   RSetSortingArray,
 } from "./utility";
 import { TGetAllPosts } from "../../query/QueryTypes";
+import { AxiosError } from "axios";
 
 const PostListData: TPostListReducer = {
   posts: [],
@@ -59,7 +60,7 @@ function RPostListReducer(
         ...state,
         posts: [],
         isLoading: false,
-        errors: action.payload,
+        errors: (action.payload as AxiosError).message,
       };
       return state;
     }

@@ -1,17 +1,17 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
 import MenuBar from "../MenuBar/MenuBar";
-
 type THeader = {
   title?: string;
+  hr?: string;
 };
 
-const Header = ({ title }: THeader) => {
+const Header = ({ title, hr }: THeader) => {
   return (
-    <Navbar bg="light" className={"Header"}>
+    <Navbar bg="light" className={"Header"} style={{ width: "100%" }}>
       <MenuBar />
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href={hr ? hr : "/"}>
           {title ? title : "Навигационная панель"}
         </Navbar.Brand>
         <Navbar.Toggle />
